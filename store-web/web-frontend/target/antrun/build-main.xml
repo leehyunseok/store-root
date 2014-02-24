@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <mkdir dir="H:\workspace\store-root\store-web\web-frontend\target/web-frontend-local/WEB-INF/classes"/>
+  <copy includeEmptyDirs="false" file="src/main/resources/log4j/log4j-local.xml" tofile="H:\workspace\store-root\store-web\web-frontend\target/web-frontend-local/WEB-INF/classes/log4j.xml" failonerror="false"/>
+</target>
+</project>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/store-comp/comp-control/comp-control.iml" filepath="$PROJECT_DIR$/store-comp/comp-control/comp-control.iml" />
+      <module fileurl="file://$PROJECT_DIR$/store-comp/comp-user/comp-user.iml" filepath="$PROJECT_DIR$/store-comp/comp-user/comp-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/store-comp/company-core/company-core.iml" filepath="$PROJECT_DIR$/store-comp/company-core/company-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/store-comp/store-comp.iml" filepath="$PROJECT_DIR$/store-comp/store-comp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/store-root.iml" filepath="$PROJECT_DIR$/store-root.iml" />
+      <module fileurl="file://$PROJECT_DIR$/store-web/store-web.iml" filepath="$PROJECT_DIR$/store-web/store-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/store-web/web-backend/web-backend.iml" filepath="$PROJECT_DIR$/store-web/web-backend/web-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/store-web/web-frontend/web-frontend.iml" filepath="$PROJECT_DIR$/store-web/web-frontend/web-frontend.iml" />
+    </modules>
+  </component>
+</project>
+
