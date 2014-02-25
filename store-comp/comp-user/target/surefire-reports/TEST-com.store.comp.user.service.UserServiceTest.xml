@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="16.135" errors="1" skipped="0" tests="1" name="com.store.comp.user.service.UserServiceTest">
+<testsuite failures="0" time="5.245" errors="1" skipped="0" tests="1" name="com.store.comp.user.service.UserServiceTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.6.0_45\jre\bin"/>
@@ -25,7 +25,7 @@
     <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 7"/>
-    <property name="classworlds.conf" value="D:\SpringMaven_source\workspace\.metadata\.plugins\org.eclipse.m2e.core\launches\m2conf8436938992752312132.tmp"/>
+    <property name="classworlds.conf" value="D:\SpringMaven_source\workspace\.metadata\.plugins\org.eclipse.m2e.core\launches\m2conf7835841465774637176.tmp"/>
     <property name="sun.jnu.encoding" value="MS949"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.6.0_45\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre6/bin/client;C:/Program Files/Java/jre6/bin;C:/Program Files/Java/jre6/lib/i386;C:\Program Files\Wizvera\Delfino;C:\Program Files\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\system32\hdsutil;C:\PROGRA~1\IDMCOM~1\ULTRAE~1;C:\Program Files\Wizvera\Delfino;C:\Program Files\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\system32\hdsutil;C:\PROGRA~1\IDMCOM~1\ULTRAE~1;;D:\02_Infra\08_infra구축\03_maven 설치\apache-maven-3.1.0-bin\apache-maven-3.1.0\bin;C:\Program Files\Java\jdk1.6.0_45\bin;D:\02_Infra\08_infra구축\07_sonar 설치\sonar-runner-2.3\bin;C:\Program Files\IDM Computer Solutions\UltraEdit\;D:\SpringMaven_source\sts-3.1.0;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -59,7 +59,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase time="12.861" classname="com.store.comp.user.service.UserServiceTest" name="testAllServiceMethods">
+  <testcase time="4.434" classname="com.store.comp.user.service.UserServiceTest" name="testAllServiceMethods">
     <error message="Could not open JDBC Connection for transaction; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)" type="org.springframework.transaction.CannotCreateTransactionException">org.springframework.transaction.CannotCreateTransactionException: Could not open JDBC Connection for transaction; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
 	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:238)
 	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:374)
@@ -123,40 +123,24 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException:
 	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1556)
 	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1545)
 	... 32 more
-Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
-	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1122)
-	at com.mysql.jdbc.MysqlIO.&lt;init&gt;(MysqlIO.java:344)
-	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2334)
+Caused by: java.sql.SQLException: Access denied for user &apos;store&apos;@&apos;localhost&apos; (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1075)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3562)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3494)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:920)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:4000)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1285)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2338)
 	... 45 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:351)
-	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:213)
-	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:200)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
-	at java.net.Socket.connect(Socket.java:529)
-	at java.net.Socket.connect(Socket.java:478)
-	at java.net.Socket.&lt;init&gt;(Socket.java:375)
-	at java.net.Socket.&lt;init&gt;(Socket.java:218)
-	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:256)
-	at com.mysql.jdbc.MysqlIO.&lt;init&gt;(MysqlIO.java:293)
-	... 46 more
 </error>
     <system-out># setUpOnce()
-INFO &gt; 13:17:17 - Loading XML bean definitions from class path resource [datasource.xml] (XmlBeanDefinitionReader.java:323)
-INFO &gt; 13:17:17 - Loading XML bean definitions from class path resource [comp-user-context.xml] (XmlBeanDefinitionReader.java:323)
-INFO &gt; 13:17:18 - Loading XML bean definitions from class path resource [comp-test-context.xml] (XmlBeanDefinitionReader.java:323)
-INFO &gt; 13:17:18 - Refreshing org.springframework.context.support.GenericApplicationContext@1bca5f1: display name [org.springframework.context.support.GenericApplicationContext@1bca5f1]; startup date [Mon Feb 24 13:17:18 KST 2014]; root of context hierarchy (AbstractApplicationContext.java:411)
-INFO &gt; 13:17:18 - Bean factory for application context [org.springframework.context.support.GenericApplicationContext@1bca5f1]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1113622 (AbstractApplicationContext.java:426)
-INFO &gt; 13:17:18 - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1113622: defining beans [dataSource,sqlMapClient,sqlMapClientTemplate,transactionManager,txControlAdvice,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,userDao,user,userService,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,digesterMD5]; root of factory hierarchy (DefaultListableBeanFactory.java:414)
-WARN &gt; 13:17:31 - Caught exception while allowing TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener@c6eff5] to process &apos;before&apos; execution of test method [public void com.store.comp.user.service.UserServiceTest.testAllServiceMethods() throws java.lang.Exception] for test instance [com.store.comp.user.service.UserServiceTest@b3f9b8] (TestContextManager.java:295)
+INFO &gt; 14:15:37 - Loading XML bean definitions from class path resource [datasource.xml] (XmlBeanDefinitionReader.java:323)
+INFO &gt; 14:15:37 - Loading XML bean definitions from class path resource [comp-user-context.xml] (XmlBeanDefinitionReader.java:323)
+INFO &gt; 14:15:37 - Loading XML bean definitions from class path resource [comp-test-context.xml] (XmlBeanDefinitionReader.java:323)
+INFO &gt; 14:15:37 - Refreshing org.springframework.context.support.GenericApplicationContext@1bca5f1: display name [org.springframework.context.support.GenericApplicationContext@1bca5f1]; startup date [Mon Feb 24 14:15:37 KST 2014]; root of context hierarchy (AbstractApplicationContext.java:411)
+INFO &gt; 14:15:37 - Bean factory for application context [org.springframework.context.support.GenericApplicationContext@1bca5f1]: org.springframework.beans.factory.support.DefaultListableBeanFactory@e1899b (AbstractApplicationContext.java:426)
+INFO &gt; 14:15:37 - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@e1899b: defining beans [dataSource,sqlMapClient,sqlMapClientTemplate,transactionManager,txControlAdvice,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,userDao,user,userService,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,digesterMD5]; root of factory hierarchy (DefaultListableBeanFactory.java:414)
+WARN &gt; 14:15:42 - Caught exception while allowing TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener@aa0877] to process &apos;before&apos; execution of test method [public void com.store.comp.user.service.UserServiceTest.testAllServiceMethods() throws java.lang.Exception] for test instance [com.store.comp.user.service.UserServiceTest@111ded2] (TestContextManager.java:295)
 org.springframework.transaction.CannotCreateTransactionException: Could not open JDBC Connection for transaction; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server. Attempted reconnect 3 times. Giving up.)
 	at org.springframework.jdbc.datasource.DataSourceTransactionManager.doBegin(DataSourceTransactionManager.java:238)
 	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:374)
@@ -220,31 +204,15 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException:
 	at org.apache.commons.dbcp.BasicDataSource.validateConnectionFactory(BasicDataSource.java:1556)
 	at org.apache.commons.dbcp.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:1545)
 	... 32 more
-Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
-	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1122)
-	at com.mysql.jdbc.MysqlIO.&lt;init&gt;(MysqlIO.java:344)
-	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2334)
+Caused by: java.sql.SQLException: Access denied for user &apos;store&apos;@&apos;localhost&apos; (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1075)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3562)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3494)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:920)
+	at com.mysql.jdbc.MysqlIO.secureAuth411(MysqlIO.java:4000)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1285)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2338)
 	... 45 more
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.net.PlainSocketImpl.socketConnect(Native Method)
-	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:351)
-	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:213)
-	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:200)
-	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
-	at java.net.Socket.connect(Socket.java:529)
-	at java.net.Socket.connect(Socket.java:478)
-	at java.net.Socket.&lt;init&gt;(Socket.java:375)
-	at java.net.Socket.&lt;init&gt;(Socket.java:218)
-	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:256)
-	at com.mysql.jdbc.MysqlIO.&lt;init&gt;(MysqlIO.java:293)
-	... 46 more
 </system-out>
   </testcase>
 </testsuite>
